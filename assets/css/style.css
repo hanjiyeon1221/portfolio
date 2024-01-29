@@ -1,8 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Raleway:wght@200;300;400;500;600;700;800&display=swap");
 @font-face {
-  font-family: "New York";
-  src: url("../font/newyork_personal_use-webfont.woff") format("woff"), url("../font/newyork_personal_use-webfont.woff2") format("woff2");
+  font-family: "pretand";
+  src: url("../font/Pretendard-Light.woff") format("woff");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "pretand";
+  src: url("../font/Pretendard-Regular.woff") format("woff");
   font-weight: 400;
+}
+@font-face {
+  font-family: "pretand";
+  src: url("../font/Pretendard-Medium.woff") format("woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "pretand";
+  src: url("../font/Pretendard-SemiBold.woff") format("woff");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "pretand";
+  src: url("../font/Pretendard-Bold.woff") format("woff");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "jk";
+  src: url("../font/658183162ad0d9fdf0657464_JokkerTRIAL-Regular.woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "jk";
+  src: url("../font/658183162ad0d9fdf065746c_JokkerTRIAL-Medium.woff");
+  font-weight: 500;
 }
 * {
   margin: 0;
@@ -68,10 +97,10 @@ ol {
 }
 
 body {
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "pretand", sans-serif;
   font-size: 16px;
-  line-height: 1;
   font-weight: 400;
+  line-height: 1;
   color: #fff;
   background-color: #1c1c1c;
   overflow-x: hidden;
@@ -131,7 +160,7 @@ body {
 .headline {
   position: relative;
   text-transform: uppercase;
-  font-family: "Raleway", sans-serif;
+  font-family: "jk", sans-serif;
   font-weight: 600;
   padding: 7px 15px;
   border: 1px solid #fff;
@@ -185,126 +214,43 @@ body {
   color: #fff;
 }
 
-.load-container {
+.loading {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "jk";
+  font-size: 20px;
+  font-weight: 700;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  -webkit-transition: -webkit-clip-path 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: -webkit-clip-path 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: clip-path 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: clip-path 1s cubic-bezier(0.075, 0.82, 0.165, 1), -webkit-clip-path 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.loading .num {
+  position: absolute;
   bottom: 0;
-  background-color: rgb(77, 77, 255);
-  z-index: 200;
-  pointer-events: none;
+  right: 0;
+  padding: 30px;
+  font-size: 10vw;
+  color: #fff;
 }
-
-.loader {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  text-transform: uppercase;
-  font-size: clamp(20px, 2vw, 28px);
-}
-
-.load-img {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 200px;
-}
-
-.overlay {
-  width: 100px;
-  height: 100vh;
-}
-
-.blocks {
-  position: fixed;
-  width: 5%;
-  height: 100vh;
-  background-color: #1c1c1c;
-}
-
-.block-1 {
-  left: 0;
-}
-
-.block-2 {
-  left: 5%;
-}
-
-.block-3 {
-  left: 10%;
-}
-
-.block-4 {
-  left: 15%;
-}
-
-.block-5 {
-  left: 20%;
-}
-
-.block-6 {
-  left: 25%;
-}
-
-.block-7 {
-  left: 30%;
-}
-
-.block-8 {
-  left: 35%;
-}
-
-.block-9 {
-  left: 40%;
-}
-
-.block-10 {
-  left: 45%;
-}
-
-.block-11 {
-  left: 50%;
-}
-
-.block-12 {
-  left: 55%;
-}
-
-.block-13 {
-  left: 60%;
-}
-
-.block-14 {
-  left: 65%;
-}
-
-.block-15 {
-  left: 70%;
-}
-
-.block-16 {
-  left: 75%;
-}
-
-.block-17 {
-  left: 80%;
-}
-
-.block-18 {
-  left: 85%;
-}
-
-.block-19 {
-  left: 90%;
-}
-
-.block-20 {
-  left: 95%;
+.loading .per {
+  font-size: 5vw;
 }
 
 .logo .st0 {
@@ -478,7 +424,7 @@ body {
   font-size: clamp(30px, 7vw, 70px);
   line-height: 120px;
   height: 120px;
-  font-family: "Raleway", sans-serif;
+  font-family: "jk", sans-serif;
   font-weight: 800;
   letter-spacing: 5px;
   -webkit-transition: 0.3s;
@@ -550,7 +496,7 @@ body {
   padding: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.4);
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-  font-family: "Raleway", sans-serif;
+  font-family: "jk", sans-serif;
   text-transform: uppercase;
 }
 @media (max-width: 480px) {
@@ -660,7 +606,7 @@ body {
 }
 .sc-intro .desc {
   text-transform: uppercase;
-  font-family: "Raleway", sans-serif;
+  font-family: "jk", sans-serif;
   font-size: clamp(35px, 7vw, 90px);
   line-height: 1.5;
   letter-spacing: -2px;
@@ -727,7 +673,7 @@ body {
 .sc-project .prj-item .text-box .title {
   display: block;
   text-transform: uppercase;
-  font-family: "Raleway", sans-serif;
+  font-family: "jk", sans-serif;
   font-size: clamp(30px, 5vw, 58px);
   font-weight: 600;
   margin-bottom: 100px;
@@ -1057,7 +1003,7 @@ body {
           align-items: center;
 }
 .sc-about .stack-area .stack-item {
-  font-family: "Raleway", sans-serif;
+  font-family: "jk", sans-serif;
   font-weight: 500;
   margin-left: 30px;
 }
@@ -1073,7 +1019,7 @@ body {
 }
 .sc-contact .inner {
   padding-top: 50px;
-  font-family: "Raleway", sans-serif;
+  font-family: "jk", sans-serif;
 }
 .sc-contact .desc {
   margin-top: 30px;
@@ -1138,7 +1084,7 @@ body {
 }
 .sc-article .number .num {
   font-size: 11vw;
-  font-family: "Raleway", sans-serif;
+  font-family: "jk", sans-serif;
   font-weight: 500;
 }
 .sc-article .desc {
@@ -1151,7 +1097,7 @@ body {
   -webkit-column-gap: 16px;
      -moz-column-gap: 16px;
           column-gap: 16px;
-  font-family: "Raleway", sans-serif;
+  font-family: "jk", sans-serif;
   font-size: 3.7rem;
   line-height: 1.5;
 }
@@ -1166,7 +1112,7 @@ body {
 .sc-insight {
   padding-bottom: 120px;
   overflow: hidden;
-  font-family: "Raleway", sans-serif;
+  font-family: "jk", sans-serif;
 }
 .sc-insight .con-head {
   display: -webkit-box;
@@ -1337,7 +1283,7 @@ body {
   margin-bottom: 32px;
 }
 .sc-contact-2 .top .together {
-  font-family: "Raleway", sans-serif;
+  font-family: "jk", sans-serif;
   font-size: 128px;
   text-align: center;
   line-height: 1;
@@ -1366,7 +1312,7 @@ body {
   padding: 25px 55px;
   background-color: transparent;
   color: #fff;
-  font-family: "Raleway", sans-serif;
+  font-family: "jk", sans-serif;
   letter-spacing: 1px;
   border: 1px solid #3a3a3a;
   border-radius: 50px;
@@ -1401,7 +1347,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-family: "Raleway", sans-serif;
+  font-family: "jk", sans-serif;
   padding: 0 15px;
 }
 .sc-contact-2 .bottom > div {

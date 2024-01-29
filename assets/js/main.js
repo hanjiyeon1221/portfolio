@@ -14,102 +14,49 @@ gsap.ticker.add(time => {
 gsap.ticker.lagSmoothing(0);
 
 /* gsap */
-let time1 = gsap.timeline();
-time1.from('.load-img', 2, {
-    y: 50,
-    opacity: 0,
-    ease: Expo.easeInOut,
+// 로딩 카운터 모션
+const items = document.querySelector('.num .data');
+gsap.from(items, {
+    textContent: 0,
+    duration: 4,
+    ease: Power1.easeIn,
+    snap: { textContent: 1 },
+    stagger: 1,
+    onComplete: function () {
+        // 끝나고 로딩모션 진행
+        loadingMotion.play();
+    },
+    // onUpdate: textContent.replace(/\B(?=(\d{3})+(?!\d))/g, ","),
 });
-time1.to(
-    '.load-img',
-    1,
-    {
-        y: -50,
-        opacity: 0,
-        ease: Expo.easeInOut,
+const loadingMotion = gsap.timeline({
+    defaults: {
+        delay: 0.3,
     },
-    'a',
-);
-time1.from(
-    '.loader',
-    1,
-    {
-        y: 30,
-        opacity: 0,
-        ease: Expo.easeInOut,
-    },
-    'a',
-);
-time1.staggerFrom(
-    '.blocks',
-    0.8,
-    {
-        width: '0%',
-        ease: Power1.easeIn,
-        delay: 1.5,
-    },
-    0.04,
-    'b',
-);
-time1.to(
-    '.loader',
-    1,
-    {
-        x: 2,
-        opacity: 0,
-        ease: Expo.easeInOut,
-        delay: 1.5,
-    },
-    'b',
-);
-time1.to(
-    '.load-container',
-    1,
-    {
-        opacity: 0,
-        display: 'none',
-        ease: Expo.easeInOut,
-    },
-    '-=0.8',
-);
+    paused: true,
 
-time1.from('.logo-area', {
-    y: -50,
-    opacity: 0,
-    ease: 'power4.out',
+    onComplete: function () {
+        // 끝나고 bg모션 진행
+        // introMotion.play();
+    },
 });
-time1.from('.btn-menu', {
-    transform: 'scale(0.5)',
-    opacity: 0,
-    ease: 'power4.out',
+loadingMotion.to('.loading', {
+    'clip-path': 'polygon(0 0, 100% 0, 100% 0, 0 0)',
 });
 
-time1.from('.holographic-bg', 1, {
-    scale: 1.1,
-    opacity: 0,
-    ease: 'power4.InOut',
-});
-
-time1.to(
-    '.sc-intro .title1',
-    0.5,
-    {
-        y: 0,
-        opacity: 1,
-        ease: 'power4.InOut',
-    },
-    '-=0.6',
-);
-time1.to(
-    '.sc-intro .title2',
-    0.5,
-    {
-        y: 0,
-        opacity: 1,
-        ease: 'power4.InOut',
-    },
-    '-=0.3',
-);
+// 메인bg 움직임
+// const introMotion = gsap.timeline({
+//     defaults:{
+//         delay:1,
+//         opacity:0,
+//         duration:1,
+//     },
+//     // paused:true,
+// })
+// introMotion.from('.holographic-bg img:nth-child(1)',{xPercent:-3,yPercent:3},'a')
+// introMotion.from('.holographic-bg img:nth-child(2)',{xPercent:2,yPercent:0},'a')
+// introMotion.from('.holographic-bg img:nth-child(3)',{xPercent:4,yPercent:-4},'a')
+// introMotion.from('.holographic-bg img:nth-child(4)',{xPercent:-1,yPercent:3},'a')
+// introMotion.from('.holographic-bg img:nth-child(5)',{xPercent:3,yPercent:2},'a')
 
 gsap.to('.holographic-bg img', {
     opacity: 0,
