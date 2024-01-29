@@ -1,7 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Raleway:wght@200;300;400;500;600;700;800&display=swap');
+//New York : 영문
+// @font-face {
+//     font-family: 'New York';
+//     src: url('../font/newyork_personal_use-webfont.woff') format('woff'), url('../font/newyork_personal_use-webfont.woff2') format('woff2');
+//     font-weight: 400;
+// }
+
+// pretand : 국문
+@font-face {
+    font-family: 'pretand';
+    src: url('../font/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+}
 
 @font-face {
-    font-family: 'New York';
-    src: url('../font/newyork_personal_use-webfont.woff') format('woff'), url('../font/newyork_personal_use-webfont.woff2') format('woff2');
+    font-family: 'pretand';
+    src: url('../font/Pretendard-Regular.woff') format('woff');
     font-weight: 400;
+}
+
+@font-face {
+    font-family: 'pretand';
+    src: url('../font/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'pretand';
+    src: url('../font/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'pretand';
+    src: url('../font/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+}
+
+// Jokker : 영문
+@font-face {
+    font-family: 'jk';
+    src: url('../font/658183162ad0d9fdf0657464_JokkerTRIAL-Regular.woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'jk';
+    src: url('../font/658183162ad0d9fdf065746c_JokkerTRIAL-Medium.woff');
+    font-weight: 500;
 }
