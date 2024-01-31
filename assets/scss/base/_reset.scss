@@ -54,15 +54,18 @@ body {
     font-size: 16px;
     font-weight: 400;
     line-height: 1;
+    word-break: keep-all;
 
     color: #fff;
-    background-color: #1c1c1c;
+    background-color: #000;
 
     overflow-x: hidden;
 }
 
 .cursor {
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 1000;
     width: 20px;
     height: 20px;
@@ -79,7 +82,7 @@ body {
     }
 
     &.on {
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
     }
 }
