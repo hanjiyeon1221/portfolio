@@ -31,8 +31,21 @@
 // --로딩모션
 
 .logo {
+    position: relative;
     font-size: 20px;
     font-family: $font--en;
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -35px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: url(../images/programmer.png) no-repeat 0 0 / cover;
+    }
 }
 
 .header {
@@ -74,7 +87,52 @@
             right: 25px;
         }
 
+        // 모바일 전용 gnb 버튼
+        .btn-nav__mb{
+            display: none;
+
+            @include responsive(640px) {
+                position: absolute;
+                right: 0;
+                display: block;
+                cursor: pointer;
+
+                span{
+                    display: block;
+                    width: 30px;
+                    height: 2px;
+                    background-color: #fff;
+
+                    transition: transform .3s;
+                }
+                span + span{
+                    margin-top: 5px;
+                }
+
+                &.open {
+                    span:first-child{
+                        transform: rotate(45deg) translateY(1px);
+                    }
+                    span:last-child{
+                        transform: rotate(-45deg) translateY(-1px);
+                        margin-top: 0px;
+                    }
+                }
+
+                &.open + .nav-list{
+                    transform: translateX(0);
+                }
+            }
+        }
+
         .nav-list {
+            @include responsive(640px) {
+                margin-top: 30px;
+                 transform: translateX(200%);
+
+                 transition: transform .3s;
+
+            }
         }
 
         .nav-item {

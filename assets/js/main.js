@@ -72,9 +72,9 @@ loadingMotion.to(
 // 메인bg 움직임
 const introMotion = gsap.timeline({
     defaults: {
-        delay: 1,
+        delay: 1.3,
         opacity: 0,
-        duration: 1,
+        duration: 1.3,
     },
     paused: true,
 });
@@ -278,3 +278,45 @@ function getClock() {
 }
 getClock();
 setInterval(getClock, 1000);
+
+// main E.text effect
+const selector = {
+    paragraph: Splitting({
+        target: '.sc-main .desc',
+        by: 'words'
+    }),    
+}
+
+const initScroll = () => {
+    gsap.set('.word', { autoAlpha: 0.4 });
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.sc-main',
+            start: '10% top',
+            end: 'bottom bottom',
+            scrub: 1,
+        },
+    });
+
+    tl.to('.word', {
+        duration: 2,
+        autoAlpha: 1,
+        stagger: 1,
+    })
+};
+
+initScroll()
+
+// mobile -> nav
+const btnNavMobile = document.querySelector('.btn-nav__mb');
+let btnNavClick = 0;
+btnNavMobile.addEventListener('click', function(){
+    // e.preventDefault()
+    btnNavClick++;
+    if(btnNavClick % 2 == 0){
+        this.classList.remove('open');
+    }else{
+        this.classList.add('open');
+    }
+})

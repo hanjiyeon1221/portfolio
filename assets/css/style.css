@@ -277,8 +277,21 @@ body {
 }
 
 .logo {
+  position: relative;
   font-size: 20px;
   font-family: "jk", sans-serif;
+}
+.logo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: -35px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url(../images/programmer.png) no-repeat 0 0/cover;
 }
 
 .header {
@@ -324,6 +337,54 @@ body {
   .header .gnb-area {
     top: 40px;
     right: 25px;
+  }
+}
+.header .gnb-area .btn-nav__mb {
+  display: none;
+}
+@media (max-width: 640px) {
+  .header .gnb-area .btn-nav__mb {
+    position: absolute;
+    right: 0;
+    display: block;
+    cursor: pointer;
+  }
+  .header .gnb-area .btn-nav__mb span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+  }
+  .header .gnb-area .btn-nav__mb span + span {
+    margin-top: 5px;
+  }
+  .header .gnb-area .btn-nav__mb.open span:first-child {
+    -webkit-transform: rotate(45deg) translateY(1px);
+            transform: rotate(45deg) translateY(1px);
+  }
+  .header .gnb-area .btn-nav__mb.open span:last-child {
+    -webkit-transform: rotate(-45deg) translateY(-1px);
+            transform: rotate(-45deg) translateY(-1px);
+    margin-top: 0px;
+  }
+  .header .gnb-area .btn-nav__mb.open + .nav-list {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@media (max-width: 640px) {
+  .header .gnb-area .nav-list {
+    margin-top: 30px;
+    -webkit-transform: translateX(200%);
+            transform: translateX(200%);
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
   }
 }
 .header .gnb-area .nav-item {
@@ -611,7 +672,7 @@ body {
   -webkit-column-gap: 16px;
      -moz-column-gap: 16px;
           column-gap: 16px;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 300;
   line-height: 1.5;
   padding-left: 50px;
